@@ -8,13 +8,19 @@ A command-line movie database application built in Java with H2 in-memory databa
 git clone https://github.com/adnansamore/MovieVault.git
 
 ## 2. Go into the project folder
+```bash
 cd MovieVault
+```
 
 ## 3. Compile the Java source files
+```bash
 javac -cp lib/h2.jar src/app/*.java -d src/class
+```
 
 ## 4. Run the application
+```bash
 java -cp "lib/h2.jar:src/class" app.Main
+```
 
 **Optional:** Use the provided script:
 ```bash
@@ -115,7 +121,7 @@ Display command help.
 > quit
 ```
 
-###Edge Cases:**
+### Edge Cases:
  -  **Invalid time format:**
 
 ```
@@ -150,14 +156,16 @@ Actor (or exit): exit
  -  **Delete people:**
 
         - Delete actor
-        ```
+
+        ```bash
         > d -p Balas
         ```
 
              - Deleted Balas
 
         - Delete Director
-        ```
+
+        ```bash
         > d -p Adnan
         ```
 
