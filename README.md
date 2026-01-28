@@ -5,7 +5,9 @@ A command-line movie database application built in Java with H2 in-memory databa
 # Clone & Run
 
 ## 1. Clone the repo
+```bash
 git clone https://github.com/adnansamore/MovieVault.git
+```
 
 ## 2. Go into the project folder
 ```bash
