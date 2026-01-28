@@ -1,0 +1,15 @@
+# Compiled Java classes
+*.class
+src/class/app/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
