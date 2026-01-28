@@ -2,6 +2,28 @@
 
 A command-line movie database application built in Java with H2 in-memory database. So the build and run process requires a few manual steps.
 
+# Clone & Run
+
+## 1. Clone the repo
+git clone https://github.com/adnansamore/MovieVault.git
+
+## 2. Go into the project folder
+cd MovieVault
+
+## 3. Compile the Java source files
+javac -cp lib/h2.jar src/app/*.java -d src/class
+
+## 4. Run the application
+java -cp "lib/h2.jar:src/class" app.Main
+
+**Optional:** Use the provided script:
+```bash
+chmod +x run_app.sh
+./run_app.sh
+```
+
+
+
 ## Requirements
 
 - **Java Development Kit (JDK)** 17 or newer
@@ -30,30 +52,6 @@ MovieVault/
 └── README.md
 ```
 
-## Build
-
-From the project root directory, compile all source files:
-
-```bash
-javac -cp lib/h2.jar src/app/*.java -d src/class
-```
-
-## Run
-
-Start the application:
-
-```bash
-java -cp "lib/h2.jar:src/class" app.Main
-```
-
-### Quick Bash Script 
-
-run:
-
-```bash
-chmod +x run_tests.sh
-./run_tests.sh
-```
 
 ## Usage
 
@@ -95,7 +93,7 @@ Actor (or exit): Adnan
 Actor (or exit): Balas
 Actor (or exit): exit
 ```
-**Result**
+
     - Movie "Inception" added successfully!
 
 
@@ -117,18 +115,18 @@ Display command help.
 > quit
 ```
 
-**Edge Cases:**
- - 1. Invalid time format:
+###Edge Cases:**
+ -  **Invalid time format:**
 
 ```
 > a -m
 Title: XYZ
 Length (hh:mm:ss): 15
 ```
- **Result**
+
     - Bad input format; Expected (hh:mm:ss), try again!
 
- - 2. Duplicate movie:
+ -  **Duplicate movie:**
 
 ```
 > a -m
@@ -138,31 +136,31 @@ Director: Adnan
 Actor (or exit): Balas
 Actor (or exit): exit
 ```
- **Result**
+
     - Movie with title "Inception" and director "Adnan" already exists!
 
- - 3. Conflicting sort options:
+ -  **Conflicting sort options:**
 
 ```
  > l -la -ld
 ```
- **Result**
+
     - Error: Cannot use -la and -ld together
 
- - 4. Delete people:
+ -  **Delete people:**
 
         - Delete actor
         ```
         > d -p Balas
         ```
-        **Result**
+
              - Deleted Balas
 
         - Delete Director
         ```
         > d -p Adnan
         ```
-        **Result**
+
              - Error: Cannot delete: Adnan is a director
 
 ## Database Details
